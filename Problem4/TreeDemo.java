@@ -40,7 +40,7 @@ class Tree implements Terrain
 	private String Type;
 	public Tree(String type)
 	{
-		System.out.println("Creating a new instance of a tree of type " + type);
+		System.out.println("Creating a new flyweight instance of a tree of type " + type);
 		String filename = "tree" + type + ".png";
 		try
 		{
