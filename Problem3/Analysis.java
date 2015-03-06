@@ -1,6 +1,9 @@
 interface Logging
 {
+<<<<<<< HEAD
 	public enum LOG_TYPE {TXT, XML, HTML};
+=======
+>>>>>>> 0cb198646f848534e2f33d4b2f8e4b686d9eab57
 	public void log(String msg);
 }
 
@@ -40,6 +43,25 @@ class LogHTML implements Logging
 	}
 }
 
+<<<<<<< HEAD
+=======
+class LoggingFactory
+{
+
+	public static Logging createLogging(String type){
+		if (type.equalsIgnoreCase("text"))
+			return new LogText();
+		else if (type.equalsIgnoreCase("xml"))
+			return new LogXML();
+		else if (type.equalsIgnoreCase("html"))
+			return new LogHTML();
+		else
+			return new LogText();
+	}
+
+}
+
+>>>>>>> 0cb198646f848534e2f33d4b2f8e4b686d9eab57
 class Analysis
 {
 	public static void main(String[] args)
@@ -50,6 +72,7 @@ class Analysis
 			System.exit(-1);
 		}
 		String type = args[0];
+<<<<<<< HEAD
 		Logging logfile;
 		if (type.equalsIgnoreCase("text"))
 			logfile = new LogText();
@@ -66,6 +89,15 @@ class Analysis
 		System.out.println("... Clustering data for analysis ...");
 		// code...
 		System.out.println("... Printing analysis results ...");
+=======
+		Logging logfile = LoggingFactory.createLogging(type);
+		logfile.log("Starting application...");
+		logfile.log("... read in data file to analyze ...");
+		// code...
+		logfile.log("... Clustering data for analysis ...");
+		// code...
+		logfile.log("... Printing analysis results ...");
+>>>>>>> 0cb198646f848534e2f33d4b2f8e4b686d9eab57
 		// code...
 	}
 }
